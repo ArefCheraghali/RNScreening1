@@ -13,6 +13,7 @@ import UserStatus from './src/components/UserStatus';
 const settingImage = require('./Images/setting.png');
 const shopImage = require('./Images/shop.png');
 const profileImage = require('./Images/profile.png');
+const reportImage = require('./Images/report.png');
 
 export default class Menu extends Component {
   constructor() {
@@ -51,9 +52,9 @@ export default class Menu extends Component {
             onPressChest={this.onPressChest}
             onPressProfile={this.onPressProfile}
             profileImage={profileImage}
-            userName={'Farid'}
-            medals={3}
-            gems={4}
+            userName={'Ahmad'}
+            medals={2}
+            gems={50}
             // backgroundColor={'white'}
           />
         </View>
@@ -67,14 +68,20 @@ export default class Menu extends Component {
           <View style={styles.BottomMenuBar}>
             <TouchableOpacity
               onPress={this.onPressSettings}
-              style={{justifyContent: 'center', alignItems: 'center'}}>
-              <Image style={{width: 25, height: 25}} source={settingImage} />
+              style={styles.settingTouch}>
+              <Image style={styles.settingSize} source={settingImage} />
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={this.onPressShop}
-              style={{justifyContent: 'center', alignItems: 'center'}}>
-              <Image style={{width: 25, height: 25}} source={shopImage} />
+              style={styles.shopTouch}>
+              <Image style={styles.shopSize} source={shopImage} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={this.onPressReport}
+              style={styles.reportTouch}>
+              <Image style={styles.reportSize} source={reportImage} />
             </TouchableOpacity>
           </View>
         </View>
@@ -115,8 +122,27 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-
   middle: {
     flex: 4,
+  },
+  settingTouch: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  settingSize: {
+    width: 25,
+    height: 25,
+  },
+  shopSize: {
+    width: 25,
+    height: 25,
+  },
+  shopTouch: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  reportSize: {
+    width: 25,
+    height: 25,
   },
 });
